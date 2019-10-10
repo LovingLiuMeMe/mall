@@ -2,7 +2,7 @@ package cn.lovingliu.mmall.mbg.model;
 
 import java.io.Serializable;
 
-public class pmsBrand implements Serializable {
+public class PmsBrand implements Serializable {
     private Long id;
 
     private String name;

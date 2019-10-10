@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.lovingliu.mmall.mbg.mapper.pmsBrandMapper">
-  <resultMap id="BaseResultMap" type="cn.lovingliu.mmall.mbg.model.pmsBrand">
+<mapper namespace="cn.lovingliu.mmall.mbg.mapper.PmsBrandMapper">
+  <resultMap id="BaseResultMap" type="cn.lovingliu.mmall.mbg.model.PmsBrand">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="first_letter" jdbcType="VARCHAR" property="firstLetter" />
@@ -13,7 +13,7 @@
     <result column="logo" jdbcType="VARCHAR" property="logo" />
     <result column="big_pic" jdbcType="VARCHAR" property="bigPic" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.lovingliu.mmall.mbg.model.pmsBrand">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.lovingliu.mmall.mbg.model.PmsBrand">
     <result column="brand_story" jdbcType="LONGVARCHAR" property="brandStory" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -35,7 +35,7 @@
     delete from pms_brand
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="cn.lovingliu.mmall.mbg.model.pmsBrand">
+  <insert id="insert" parameterType="cn.lovingliu.mmall.mbg.model.PmsBrand">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -48,7 +48,7 @@
       #{productCommentCount,jdbcType=INTEGER}, #{logo,jdbcType=VARCHAR}, #{bigPic,jdbcType=VARCHAR}, 
       #{brandStory,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.lovingliu.mmall.mbg.model.pmsBrand">
+  <insert id="insertSelective" parameterType="cn.lovingliu.mmall.mbg.model.PmsBrand">
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -118,7 +118,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.lovingliu.mmall.mbg.model.pmsBrand">
+  <update id="updateByPrimaryKeySelective" parameterType="cn.lovingliu.mmall.mbg.model.PmsBrand">
     update pms_brand
     <set>
       <if test="name != null">
@@ -154,7 +154,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.lovingliu.mmall.mbg.model.pmsBrand">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.lovingliu.mmall.mbg.model.PmsBrand">
     update pms_brand
     set name = #{name,jdbcType=VARCHAR},
       first_letter = #{firstLetter,jdbcType=VARCHAR},
@@ -168,7 +168,7 @@
       brand_story = #{brandStory,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.lovingliu.mmall.mbg.model.pmsBrand">
+  <update id="updateByPrimaryKey" parameterType="cn.lovingliu.mmall.mbg.model.PmsBrand">
     update pms_brand
     set name = #{name,jdbcType=VARCHAR},
       first_letter = #{firstLetter,jdbcType=VARCHAR},

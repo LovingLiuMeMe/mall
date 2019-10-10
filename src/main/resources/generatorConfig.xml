@@ -36,7 +36,7 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="cn.lovingliu.mmall.mbg.mapper"
                              targetProject="./src/main/java"/>
         <!--生成全部表tableName设为%-->
-        <table tableName="pms_brand" domainObjectName="pmsBrand" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        <table tableName="pms_brand" domainObjectName="PmsBrand" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
         <table tableName="pms_product">

@@ -1,7 +1,7 @@
 server:
   port: 8888
   servlet:
-    context-path: mall
+    context-path: /mall
 
 spring:
   datasource:
@@ -14,4 +14,5 @@ mybatis:
   mapper-locations:
     - classpath:mapper/*.xml #自定义mapper
     - classpath*:cn/**/mapper/*.xml #mybatis generator 生成的
-  config-location: classpath:mybatis/mybatis-config.xml
+logging:
+  config: classpath:log/logback-spring.xml
