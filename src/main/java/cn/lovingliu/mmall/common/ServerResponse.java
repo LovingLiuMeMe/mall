@@ -1,6 +1,6 @@
 package cn.lovingliu.mmall.common;
 
-import cn.lovingliu.mmall.enums.ResultCode;
+import cn.lovingliu.mmall.enums.CommonCode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.io.Serializable;
@@ -40,7 +40,7 @@ public class ServerResponse<T> implements Serializable {
     }
 
     public boolean ifSuccess() {
-        return this.code == ResultCode.SUCCESS.getCode();
+        return this.code == CommonCode.SUCCESS.getCode();
     }
 
     public int getCode() {
@@ -56,28 +56,28 @@ public class ServerResponse<T> implements Serializable {
     }
 
     public static <T> ServerResponse<T> createBySuccess() {
-        return new ServerResponse<T>(ResultCode.SUCCESS.getCode());
+        return new ServerResponse<T>(CommonCode.SUCCESS.getCode());
     }
 
     public static <T> ServerResponse<T> createBySuccessMessage(String msg) {
-        return new ServerResponse<T>(ResultCode.SUCCESS.getCode(), msg);
+        return new ServerResponse<T>(CommonCode.SUCCESS.getCode(), msg);
     }
 
     public static <T> ServerResponse<T> createBySuccess(T data) {
-        return new ServerResponse<T>(ResultCode.SUCCESS.getCode(), data);
+        return new ServerResponse<T>(CommonCode.SUCCESS.getCode(), data);
     }
 
     public static <T> ServerResponse<T> createBySuccess(String msg, T data) {
-        return new ServerResponse<T>(ResultCode.SUCCESS.getCode(), msg, data);
+        return new ServerResponse<T>(CommonCode.SUCCESS.getCode(), msg, data);
     }
 
 
     public static <T> ServerResponse<T> createByError() {
-        return new ServerResponse<T>(ResultCode.ERROR.getCode(), ResultCode.ERROR.getMsg());
+        return new ServerResponse<T>(CommonCode.ERROR.getCode(), CommonCode.ERROR.getMsg());
     }
 
     public static <T> ServerResponse<T> createByErrorMessage(String errorMsg) {
-        return new ServerResponse<T>(ResultCode.ERROR.getCode(), errorMsg);
+        return new ServerResponse<T>(CommonCode.ERROR.getCode(), errorMsg);
     }
 
     public static <T> ServerResponse<T> createByErrorCodeMessage(int errorCode, String errorMsg) {
