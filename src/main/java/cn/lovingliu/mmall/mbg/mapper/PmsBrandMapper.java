@@ -2,6 +2,8 @@ package cn.lovingliu.mmall.mbg.mapper;
 
 import cn.lovingliu.mmall.mbg.model.PmsBrand;
 
+import java.util.List;
+
 public interface PmsBrandMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -16,4 +18,6 @@ public interface PmsBrandMapper {
     int updateByPrimaryKeyWithBLOBs(PmsBrand record);
 
     int updateByPrimaryKey(PmsBrand record);
+
+    List<PmsBrand> selectAll();
 }

@@ -181,4 +181,9 @@
       big_pic = #{bigPic,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from pms_brand
+  </select>
 </mapper>

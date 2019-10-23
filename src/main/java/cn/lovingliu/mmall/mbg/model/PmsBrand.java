@@ -1,10 +1,16 @@
 package cn.lovingliu.mmall.mbg.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
 
+@ApiModel(description="商户的品牌")
 public class PmsBrand implements Serializable {
+    @ApiModelProperty("唯一标识ID")
     private Long id;
 
+    @ApiModelProperty("名称")
     private String name;
 
     /**
@@ -12,8 +18,10 @@ public class PmsBrand implements Serializable {
      *
      * @mbg.generated
      */
+    @ApiModelProperty("首字母")
     private String firstLetter;
 
+    @ApiModelProperty("排序权重")
     private Integer sort;
 
     /**
@@ -21,8 +29,10 @@ public class PmsBrand implements Serializable {
      *
      * @mbg.generated
      */
+    @ApiModelProperty("是否为品牌制造商：0->不是；1->是")
     private Integer factoryStatus;
 
+    @ApiModelProperty("是否显示")
     private Integer showStatus;
 
     /**
@@ -30,6 +40,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbg.generated
      */
+    @ApiModelProperty("产品数量")
     private Integer productCount;
 
     /**
@@ -37,6 +48,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbg.generated
      */
+    @ApiModelProperty("产品评论数量")
     private Integer productCommentCount;
 
     /**
@@ -44,6 +56,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbg.generated
      */
+    @ApiModelProperty("品牌logo")
     private String logo;
 
     /**
@@ -51,6 +64,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbg.generated
      */
+    @ApiModelProperty("专区大图")
     private String bigPic;
 
     /**
