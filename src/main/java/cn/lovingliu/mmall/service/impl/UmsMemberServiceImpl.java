@@ -30,7 +30,8 @@ public class UmsMemberServiceImpl implements UmsMemberService {
 
     @Override
     public ServerResponse generateAuthCode(String telephone) {
-
+        Long time = redisService.increment(String.format(REDIS_KEY_PREFIX_AUTHCODE,telephone),1);
+        System.out.println("该用户获取次数"+time);
         if(redisService.getValue(String.format(REDIS_KEY_PREFIX_AUTHCODE,telephone)) == null){
             StringBuilder sb = new StringBuilder();
             Random random = new Random();

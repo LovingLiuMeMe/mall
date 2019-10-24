@@ -7,7 +7,9 @@ package cn.lovingliu.mmall.enums;
  */
 public enum CommonCode {
     SUCCESS(0,"成功"),
-    ERROR(1,"失败");
+    ERROR(1,"失败"),
+    AUTH_NOT_ALLOW(100,"权限不足"),
+    AUTH_ERROR(101,"权限校验失败");
 
     private final int code;
     private final String msg;

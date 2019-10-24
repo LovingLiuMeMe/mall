@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,14 +21,15 @@ import java.util.List;
  */
 @Api(tags = "PmsBrandController", description = "品牌管理")
 @RestController
-@RequestMapping("/brand/")
+@RequestMapping("/brand")
 @Slf4j
 public class PmsBrandController {
     @Autowired
     private PmsBrandService brandService;
 
     @ApiOperation("获取所有品牌列表")
-    @GetMapping("listAll")
+    @GetMapping("/listAll")
+    @PreAuthorize("hasAuthority('pms:brand:read')")
     public ServerResponse<List<PmsBrand>> getBrandList() {
         return ServerResponse.createBySuccess(brandService.listAllBrand());
     }
